@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../src/provider/i18n_provider.dart';
 
+/// 没有权限弹窗
 class NotPermissionDialog extends StatefulWidget {
   final I18NPermissionProvider provider;
 

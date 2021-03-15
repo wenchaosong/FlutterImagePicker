@@ -20,6 +20,7 @@ part './main/bottom_widget.dart';
 
 part './main/image_item.dart';
 
+/// 选择器主页面
 class PhotoMainPage extends StatefulWidget {
   final ValueChanged<List<AssetEntity>> onClose;
   final Options options;
@@ -82,6 +83,13 @@ class _PhotoMainPageState extends State<PhotoMainPage>
       widget.photoPathList == null || widget.photoPathList.isEmpty;
 
   Throttle _changeThrottle;
+
+  int get previousWidgetsCount {
+    if (options.previousBuilder != null) {
+      return 1;
+    } else
+      return 0;
+  }
 
   @override
   void initState() {
@@ -275,16 +283,28 @@ class _PhotoMainPageState extends State<PhotoMainPage>
           mainAxisSpacing: options.padding,
         ),
         itemBuilder: _buildItem,
-        itemCount: count,
+        itemCount: count + previousWidgetsCount,
       ),
     );
   }
 
   Widget _buildItem(BuildContext context, int index) {
+    if (options.previousBuilder != null) {
+      if (index == 0) {
+        return options.previousBuilder(context);
+      } else {
+        index--;
+      }
+    }
+
     final noMore = assetProvider.noMore;
     if (!noMore && index == assetProvider.count) {
       _loadMore();
       return _buildLoading();
+    }
+
+    if (list.length < 1) {
+      return new Container();
     }
 
     var data = list[index];
@@ -381,16 +401,6 @@ class _PhotoMainPageState extends State<PhotoMainPage>
   }
 
   void _onGalleryChange(AssetPathEntity assetPathEntity) async {
-    // _currentPath = assetPathEntity;
-
-    // _currentPath.assetList.then((v) async {
-    //   _sortAssetList(v);
-    //   list.clear();
-    //   list.addAll(v);
-    //   scrollController.jumpTo(0.0);
-    //   await checkPickImageEntity();
-    //   setState(() {});
-    // });
     if (assetPathEntity != assetProvider.current) {
       assetProvider.current = assetPathEntity;
       await assetProvider.loadMore();

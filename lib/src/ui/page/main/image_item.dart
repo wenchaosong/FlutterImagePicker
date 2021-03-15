@@ -1,5 +1,6 @@
 part of '../photo_main_page.dart';
 
+/// 图片文件控件
 class ImageItem extends StatelessWidget {
   final AssetEntity entity;
 

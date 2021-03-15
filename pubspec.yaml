@@ -1,6 +1,6 @@
 name: flutter_img_picker
-description:  Flutter plugin for file picker.
-version: 0.0.1
+description:  Flutter plugin for image and file picker,support multi picker,support custom ui.
+version: 0.0.3
 homepage: https://github.com/wenchaosong/FlutterImagePicker
 
 environment:

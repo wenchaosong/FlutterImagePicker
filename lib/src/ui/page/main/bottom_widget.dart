@@ -1,5 +1,6 @@
 part of '../photo_main_page.dart';
 
+/// 底部视图
 class _BottomWidget extends StatefulWidget {
   final ValueChanged<AssetPathEntity> onGalleryChange;
 

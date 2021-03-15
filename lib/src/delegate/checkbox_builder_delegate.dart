@@ -3,6 +3,7 @@ import '../../src/entity/options.dart';
 import '../../src/provider/i18n_provider.dart';
 import '../../src/ui/widget/check_tile_copy.dart';
 
+/// 选中框视图
 abstract class CheckBoxBuilderDelegate {
   Widget buildCheckBox(
     BuildContext context,
@@ -17,11 +18,13 @@ class DefaultCheckBoxBuilderDelegate extends CheckBoxBuilderDelegate {
   Color activeColor;
   Color unselectedColor;
   Color checkColor;
+  double fontSize;
 
   DefaultCheckBoxBuilderDelegate({
     this.activeColor = Colors.white,
     this.unselectedColor = Colors.white,
     this.checkColor = Colors.black,
+    this.fontSize = 15,
   });
 
   @override
@@ -42,7 +45,7 @@ class DefaultCheckBoxBuilderDelegate extends CheckBoxBuilderDelegate {
         title: Text(
           i18nProvider.getSelectedOptionsText(options),
           textAlign: TextAlign.end,
-          style: TextStyle(color: options.textColor),
+          style: TextStyle(fontSize: fontSize, color: options.textColor),
         ),
       ),
     );

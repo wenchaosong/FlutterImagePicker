@@ -176,14 +176,8 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
       child: SafeArea(
         child: Container(
           height: 52.0,
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                child: Container(),
-              ),
-              _buildCheckbox(),
-            ],
-          ),
+          alignment: Alignment.center,
+          child: _buildCheckbox(),
         ),
       ),
     );
@@ -191,9 +185,6 @@ class _PhotoPreviewPageState extends State<PhotoPreviewPage> {
 
   Container _buildCheckbox() {
     return Container(
-      constraints: BoxConstraints(
-        maxWidth: 150.0,
-      ),
       child: StreamBuilder<int>(
         builder: (ctx, snapshot) {
           var index = snapshot.data;

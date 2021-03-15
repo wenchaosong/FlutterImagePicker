@@ -1,7 +1,7 @@
 ### 本地文件选择器
 
-[![Pub Package](https://img.shields.io/pub/v/flutter_img_picker.svg?color=blue)](https://pub.dartlang.org/packages/flutter_img_picker)
-[![](https://img.shields.io/github/last-commit/wenchaosong/FlutterImagePicker?color=yellow)](https://github.com/wenchaosong/FlutterImagePicker)
+![](https://img.shields.io/pub/v/flutter_img_picker.svg?color=blue)
+![](https://img.shields.io/github/last-commit/wenchaosong/FlutterImagePicker?color=yellow)
 
 在原项目[photo](https://github.com/CaiJingLong/flutter_photo) 基础上修改了升级 2.0 出现的问题
 
@@ -11,57 +11,57 @@
 
 ```
 dependencies:
-    flutter_img_picker: ^0.0.1
+    flutter_img_picker: ^0.0.3
 ```
 
 #### 使用方法
 
+##### Simple use
 ```
-...
-// Simple use
-List<AssetEntity> assetList = await PhotoPicker.pickAsset(context: context);
+List<AssetEntity> assetList = await FilePicker.pickAsset(context: context);
+```
 
-// More option
-List<AssetEntity> imgList = await PhotoPicker.pickAsset(
+##### More option
+```
+List<AssetEntity> imgList = await FilePicker.pickAsset(
       // BuildContext requied
       context: context,
-      /// The following are optional parameters.
-      themeColor: Colors.green,
+      // The following are optional parameters.
+
       // the title color and bottom color
-      padding: 1.0,
+      themeColor: Colors.green,
       // item padding
-      dividerColor: Colors.grey,
+      padding: 1.0,
       // divider color
-      disableColor: Colors.grey.shade300,
-      // the check box disable color
-      itemRadio: 0.88,
+      dividerColor: Colors.grey,
       // the content item radio
-      maxSelected: 8,
+      itemRadio: 0.88,
       // max picker image count
-      provider: I18nProvider.chinese,
+      maxSelected: 8,
       // i18n provider ,default is chinese. , you can custom I18nProvider or use ENProvider()
-      rowCount: 5,
+      provider: I18nProvider.chinese,
       // item row count
-      textColor: Colors.white,
+      rowCount: 5,
       // text color
-      thumbSize: 150,
+      textColor: Colors.white,
       // preview thumb size , default is 64
-      sortDelegate: SortDelegate.common,
+      thumbSize: 150,
       // default is common ,or you make custom delegate to sort your gallery
+      sortDelegate: SortDelegate.common,
+      // default is DefaultCheckBoxBuilderDelegate ,or you make custom delegate to create checkbox
       checkBoxBuilderDelegate: DefaultCheckBoxBuilderDelegate(
         activeColor: Colors.white,
         unselectedColor: Colors.white,
         checkColor: Colors.blue,
-      ), // default is DefaultCheckBoxBuilderDelegate ,or you make custom delegate to create checkbox
-
-      loadingDelegate:
-          this, // if you want to build custom loading widget,extends LoadingDelegate [see example/lib/main.dart]
-
-      badgeDelegate: const DefaultBadgeDelegate(), /// or custom class extends [BadgeDelegate]
-
-      pickType: type, // all/image/video
-
-      List<AssetPathEntity> photoPathList, /// when [photoPathList] is not null , [pickType] invalid .
+      ),
+      // if you want to build custom loading widget,extends LoadingDelegate [see example/lib/main.dart]
+      loadingDelegate: this,
+      // or custom class extends [BadgeDelegate]
+      badgeDelegate: const DefaultBadgeDelegate(),
+      // all/image/video
+      pickType: type,
+      // when [photoPathList] is not null , [pickType] invalid .
+      photoPathList: pathList,
     );
 
 ```

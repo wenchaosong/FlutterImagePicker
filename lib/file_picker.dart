@@ -94,6 +94,7 @@ class FilePicker {
     BadgeDelegate badgeDelegate = const DefaultBadgeDelegate(),
     List<AssetPathEntity> photoPathList,
     List<AssetEntity> pickedAssetList,
+    PhotoPreviousBuilder previousBuilder,
   }) {
     assert(provider != null, "provider must be not null");
     assert(context != null, "context must be not null");
@@ -123,6 +124,7 @@ class FilePicker {
       loadingDelegate: loadingDelegate,
       badgeDelegate: badgeDelegate,
       pickType: pickType,
+      previousBuilder: previousBuilder,
     );
 
     return FilePicker()._pickAsset(
@@ -134,6 +136,7 @@ class FilePicker {
     );
   }
 
+  /// simple use
   Future<List<AssetEntity>> _pickAsset(
     BuildContext context,
     Options options,

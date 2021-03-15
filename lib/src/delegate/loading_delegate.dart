@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photo_manager/photo_manager.dart';
 
+/// 加载中视图
 abstract class LoadingDelegate {
   Widget buildBigImageLoading(
       BuildContext context, AssetEntity entity, Color themeColor);

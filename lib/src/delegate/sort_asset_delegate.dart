@@ -1,5 +1,6 @@
 part of './sort_delegate.dart';
 
+/// 排序规则
 abstract class SortAssetDelegate {
   const SortAssetDelegate();
 
