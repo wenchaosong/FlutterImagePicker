@@ -1,7 +1,7 @@
 ### 本地文件选择器
 
-![](https://img.shields.io/pub/v/flutter_img_picker.svg?color=blue)(https://pub.dev/packages/flutter_img_picker)
-![](https://img.shields.io/github/last-commit/wenchaosong/FlutterImagePicker?color=yellow)(https://github.com/wenchaosong/FlutterImagePicker)
+[![](https://img.shields.io/pub/v/flutter_img_picker.svg?color=blue)](https://pub.dev/packages/flutter_img_picker)
+[![](https://img.shields.io/github/last-commit/wenchaosong/FlutterImagePicker?color=yellow)](https://github.com/wenchaosong/FlutterImagePicker)
 
 在原项目[photo](https://github.com/CaiJingLong/flutter_photo) 基础上修改了升级 2.0 出现的问题
 
