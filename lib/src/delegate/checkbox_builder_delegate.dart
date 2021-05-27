@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide CheckboxListTile;
+import 'package:flutter/material.dart';
 import '../../src/entity/options.dart';
 import '../../src/provider/i18n_provider.dart';
-import '../../src/ui/widget/check_tile_copy.dart';
 
 /// 选中框视图
 abstract class CheckBoxBuilderDelegate {

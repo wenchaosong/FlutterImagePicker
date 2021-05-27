@@ -5,7 +5,7 @@
 
 在原项目[photo](https://github.com/CaiJingLong/flutter_photo) 基础上修改了升级 2.0 出现的问题
 
-![效果示例](/pic/image_picker.gif)
+![效果示例](https://upload-images.jianshu.io/upload_images/9913211-65376a2e85da1c08.gif)
 
 #### 导入方式
 

@@ -297,14 +297,14 @@ class _PhotoMainPageState extends State<PhotoMainPage>
       }
     }
 
+    if (list.length < 1) {
+      return Container();
+    }
+
     final noMore = assetProvider.noMore;
     if (!noMore && index == assetProvider.count) {
       _loadMore();
       return _buildLoading();
-    }
-
-    if (list.length < 1) {
-      return new Container();
     }
 
     var data = list[index];

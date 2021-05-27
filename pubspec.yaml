@@ -13,4 +13,4 @@ dependencies:
     sdk: flutter
 
   # https://pub.dev/packages/photo_manager
-  photo_manager: ^0.6.0
+  photo_manager: ^1.2.1
